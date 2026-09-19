@@ -1,6 +1,23 @@
-# ParaCare Maroc
+# ParaCare Maroc — Boutique et gestion de parapharmacie
+
+**Laravel 12 · PHP · Blade · Bootstrap 5 · MySQL · FR / EN / AR**
 
 Application Laravel pour gerer une parapharmacie avec une boutique en ligne, un espace client et une administration dediee au catalogue, au stock, aux ventes et aux commandes.
+
+## Contexte et contribution
+
+Projet de stage réalisé chez **Next Media Tech**. J'ai développé la majeure partie de l'application individuellement, avec de l'assistance ponctuelle.
+
+L'application relie le parcours client (catalogue, panier, commandes) au travail quotidien de l'administration (produits, stocks, ventes et alertes).
+
+## Parcours de découverte
+
+Après l'installation locale :
+1. Ouvrir la boutique et consulter un produit.
+2. Ajouter un produit au panier et parcourir la commande avec des données fictives.
+3. Se connecter comme administrateur pour explorer le catalogue et le tableau de bord.
+4. Enregistrer une entrée de stock, puis une vente, et observer les quantités.
+5. Consulter les alertes de stock et changer la langue de l'interface.
 
 ## Fonctionnalites
 
@@ -89,7 +106,9 @@ Puis ouvrir:
 http://127.0.0.1:8000
 ```
 
-## Compte administrateur initial
+## Compte administrateur local
+
+Ces identifiants servent uniquement à la démonstration locale. Les remplacer avant toute mise en ligne.
 
 ```text
 Nom d'utilisateur: admin
@@ -114,6 +133,14 @@ Mot de passe: password
 - Une vente est refusee si la quantite demandee depasse le stock disponible.
 - Les produits avec stock inferieur ou egal au seuil minimum apparaissent dans les alertes.
 - Les produits expires ou proches de l'expiration sont visibles dans le dashboard et la page d'alertes.
+
+## Tests
+
+```bash
+php artisan test
+```
+
+Les tests fonctionnels couvrent les filtres du catalogue, la localisation, les avis produits et les ventes : diminution du stock, total calculé et refus d'une quantité indisponible. Les tests utilisent une base SQLite en mémoire.
 
 ## Apercu
 
